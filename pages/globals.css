@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans&family=Staatliches&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.great-vibes{
+    font-family: 'Great Vibes', cursive;
+}
+.staat{
+    font-family: 'Staatliches', cursive;
+}
+.noto{
+    font-family: 'Noto Sans', sans-serif;
+}
+.fadein{
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.fadeout{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+}
+.custom-loader::before,
+.custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    animation: s2 2s infinite;
+}
+.custom-loader::before {
+  margin:8px;
+  filter:hue-rotate(45deg);
+  background-size: 16px 16px;
+  animation-timing-function: linear
+}
+
+@keyframes s2{ 
+  100%{transform: rotate(.5turn)}
+}
